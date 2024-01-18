@@ -5,11 +5,11 @@ import 'package:weather/weather.dart';
 
 import '../data/my_data.dart';
 
-part 'weather_bloc_event.dart';
-part 'weather_bloc_state.dart';
+part 'weather_event.dart';
+part 'weather_state.dart';
 
-class WeatherBlocBloc extends Bloc<WeatherBlocEvent, WeatherBlocState> {
-  WeatherBlocBloc() : super(WeatherBlocInitial()) {
+class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
+  WeatherBloc() : super(WeatherBlocInitial()) {
     on<FetchWeather>((event, emit) async {
       emit(WeatherBlocLoading());
       try {
